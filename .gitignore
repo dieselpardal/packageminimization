@@ -1,2 +1,6 @@
-*.gustavo
-
+build
+.idea
+!gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.properties
+gradle
+.gradle
