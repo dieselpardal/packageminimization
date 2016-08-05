@@ -45,16 +45,17 @@ public class Distribution {
     public void fulfilled() {
         for (int countCenter = 0; countCenter < this.centers.size(); countCenter++) {
             for (int countProduct = 0; countProduct < this.product.size(); countProduct++) {
-                Centers cen =  this.centers.get(countCenter);
-                Products pro = this.product.get(countProduct);
-                if (cen.product.equals(pro.name)) {
-                    if (pro.quantity < cen.quantity) {
-                        this.centersOut.add(new Centers(cen.center, cen.product, pro.quantity));
+                Centers centers =  this.centers.get(countCenter);
+                Products products = this.product.get(countProduct);
+
+                if (centers.product.equals(products.name)) {
+                    if (products.quantity < centers.quantity) {
+                        this.centersOut.add(new Centers(centers.center, centers.product, products.quantity));
                         this.product.remove(countProduct);
                     } else {
-                        this.centersOut.add(new Centers(cen.center, cen.product, cen.quantity));
-                        pro.quantity -= cen.quantity;
-                        if (pro.quantity <= 0) this.product.remove(countProduct);
+                        this.centersOut.add(new Centers(centers.center, centers.product, centers.quantity));
+                        products.quantity -= centers.quantity;
+                        if (products.quantity <= 0) this.product.remove(countProduct);
                     }
                 }
             }
