@@ -8,7 +8,7 @@ import static org.junit.Assert.assertThat;
 public class ProductsTest {
 
     @Test
-    public void testNewProduct(){
+    public void testNewProduct() {
         Product products = new Product("Tablet", 2);
         assertThat(products.getName(), is("Tablet"));
         assertThat(products.getQuantity(), is(2));

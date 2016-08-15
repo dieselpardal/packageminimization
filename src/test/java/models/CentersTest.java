@@ -8,16 +8,15 @@ import static org.junit.Assert.assertThat;
 public class CentersTest {
 
     @Test
-    public void testNewCenter(){
+    public void testNewCenter() {
         Center center = new Center("Brazil", "Tablet", 2);
-
         assertThat(center.getCenter(), is("Brazil"));
         assertThat(center.getProduct(), is("Tablet"));
         assertThat(center.getQuantity(), is(2));
     }
 
     @Test
-    public void testChangeCenter(){
+    public void testOtherNewCenter() {
         Center center = new Center("Brazil", "Tablet", 2);
         Center otherCenter = new Center("Chile", center.getProduct(), center.getQuantity());
         assertThat(otherCenter.getCenter(), is("Chile"));
